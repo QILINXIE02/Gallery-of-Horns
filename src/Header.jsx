@@ -1,8 +1,15 @@
-// Header.jsx
-import React from 'react';
+import React, { useState } from 'react';
 
 function Header() {
-  return <header><h1>Gallery of Horns</h1></header>;
+  const [isOriginalTitle, setIsOriginalTitle] = useState(true);
+
+  const toggleTitle = () => setIsOriginalTitle(!isOriginalTitle);
+
+  return (
+    <header onClick={toggleTitle} style={{ cursor: 'pointer' }}>
+      <h1>{isOriginalTitle ? 'Gallery of Horns' : 'Explore the Horned Creatures'}</h1>
+    </header>
+  );
 }
 
 export default Header;
