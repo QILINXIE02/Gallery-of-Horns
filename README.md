@@ -12,7 +12,7 @@ Currently, two official plugins are available:
 Feature 1 Display images : estimated time needed to complete: 50 mins, actual time :15 mis; 
 Feature 2 Favorite individual beasts: estimated time needed to complete: 30 mins, actual time :25mis;
  Feature 3: Bootstrap: estimated time needed to complete: 40mins, actual time :1 hr;
-
+lighthouse score: ![alt text](image-1.png)
 
 3/25
 Accessibility for lab 1:
