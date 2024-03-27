@@ -1,0 +1,10 @@
+@import-normalize;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(243, 163, 66);
+}
+
+footer {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}

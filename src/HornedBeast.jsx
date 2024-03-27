@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
-function HornedBeast(props) {
+function HornedBeast({ title, imageUrl, description, onClick }) {
   const [favorites, setFavorites] = useState(0);
 
-  const handleFavoriteClick = () => {
+  const handleFavoriteClick = (e) => {
+    e.stopPropagation(); 
     setFavorites(favorites + 1);
   };
 
   return (
-    <div>
-      <h2>{props.title}</h2>
-      <img src={props.imageUrl} alt={props.title} title={props.title} />
-      <p>{props.description}</p>
-      <Button variant="outline-danger" onClick={handleFavoriteClick}>
-        Favorite <span role="img" aria-label="heart">❤️</span> {favorites}
-      </Button>
-    </div>
+    <Card style={{ width: '18rem', margin: '10px', display: 'inline-block' }} onClick={onClick}>
+      <Card.Img variant="top" src={imageUrl} alt={`The beast: ${title}`} />
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>{description}</Card.Text>
+        <Button variant="primary" onClick={handleFavoriteClick}>
+          ❤️ {favorites}
+        </Button>
+      </Card.Body>
+    </Card>
   );
 }
 
