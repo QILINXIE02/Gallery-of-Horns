@@ -4,7 +4,7 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Gallery from './components/Gallery.jsx';
 import SelectedBeast from './components/SelectedBeast.jsx';
-import { Form } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Navbar } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -25,34 +25,49 @@ function App() {
   );
 
   return (
-    <>
-      <Header />
-      <Form>
-        <Form.Group controlId="hornFilter">
-          <Form.Label>Filter by number of horns</Form.Label>
-          <Form.Control as="select" value={hornFilter} onChange={(e) => setHornFilter(e.target.value)}>
-            <option value="">All</option>
-            <option value="1">1 Horn</option>
-            <option value="2">2 Horns</option>
-            <option value="3">3 Horns</option>
-            <option value="100">100 Horns</option>
-          </Form.Control>
-        </Form.Group>
-      </Form>
-      <input
-        type="text"
-        placeholder="Search for beasts..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
+    <Container fluid>
+      <Navbar bg="dark" variant="dark" expand="lg">
+        <Container>
+          <Navbar.Brand href="#">Gallery of Horns</Navbar.Brand>
+        </Container>
+      </Navbar>
+      
+      <Row className="justify-content-md-center mt-3">
+        <Col md="auto">
+          <Form className="d-flex">
+            <Form.Control
+              type="text"
+              placeholder="Search for beasts..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="me-2"
+            />
+            <Form.Select
+              aria-label="Filter by number of horns"
+              value={hornFilter}
+              onChange={(e) => setHornFilter(e.target.value)}
+            >
+              <option value="">All Horns</option>
+              <option value="1">1 Horn</option>
+              <option value="2">2 Horns</option>
+              <option value="3">3 Horns</option>
+              <option value="100">100 Horns</option>
+            </Form.Select>
+            <Button variant="outline-success">Search</Button>
+          </Form>
+        </Col>
+      </Row>
+
       <Gallery beasts={filteredBeasts} onBeastClick={handleBeastClick} />
+
       <SelectedBeast
         beast={selectedBeast}
         show={showModal}
         onHide={() => setShowModal(false)}
       />
+      
       <Footer />
-    </>
+    </Container>
   );
 }
 
