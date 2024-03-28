@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import data from './data.json';
-import Header from './Header';
-import Footer from './Footer';
-import Gallery from './Gallery';
-import SelectedBeast from './SelectedBeast';
+import data from './data/data.json'; 
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
+import Gallery from './components/Gallery.jsx';
+import SelectedBeast from './components/SelectedBeast.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 function App() {
   const [selectedBeast, setSelectedBeast] = useState({});
