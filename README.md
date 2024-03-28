@@ -9,9 +9,13 @@ Currently, two official plugins are available:
 # Gallery-of-Horns
 
 3/28 class 4, lab 4:
+Feature #1: Display a Modal
 
+Estimate of time needed to complete: __1hr___
 
+Actual time needed to complete: _1hr ___ ;
 
+lighthouse score:![alt text](image-3.png)
 
 
 
