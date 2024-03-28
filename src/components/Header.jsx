@@ -10,7 +10,7 @@ function Header() {
       onClick={toggleTitle}
       style={{
         cursor: 'pointer',
-        textAlign: 'center', // Center align the content
+        textAlign: 'center',
       }}
     >
       <h1>{isOriginalTitle ? 'Gallery of Horns' : 'Explore the Horned Creatures'}</h1>
