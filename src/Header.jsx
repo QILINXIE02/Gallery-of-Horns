@@ -6,7 +6,13 @@ function Header() {
   const toggleTitle = () => setIsOriginalTitle(!isOriginalTitle);
 
   return (
-    <header onClick={toggleTitle} style={{ cursor: 'pointer' }}>
+    <header
+      onClick={toggleTitle}
+      style={{
+        cursor: 'pointer',
+        textAlign: 'center', // Center align the content
+      }}
+    >
       <h1>{isOriginalTitle ? 'Gallery of Horns' : 'Explore the Horned Creatures'}</h1>
     </header>
   );
